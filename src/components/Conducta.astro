@@ -1,0 +1,26 @@
+---
+import { conductaItems } from '../data/curso';
+---
+<section id="conducta">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">08 — Código de conducta</span>
+      <h2>Cómo nos<br>tratamos aquí</h2>
+    </div>
+    <p style="font-size:14px; color:var(--text-dim); max-width:640px; margin-bottom:48px;">Este curso ocurre en un espacio de aprendizaje compartido. Lo que sigue no es sugerencia: es el estándar mínimo de convivencia que hace posible que el aprendizaje ocurra para todos y todas.</p>
+
+    <div class="conduct-grid">
+      {conductaItems.map((item) => (
+        <div class="conduct-block">
+          <div class="conduct-num">{item.num}</div>
+          <div class="conduct-title">{item.titulo}</div>
+          <p class="conduct-desc">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="conduct-footer">
+      <p>El incumplimiento grave o reiterado de este código puede derivar en reportes formales a la Dirección de Docencia de la Facultad. Ante cualquier situación de acoso o discriminación, se puede contactar directamente a la profesora o acudir a los <a href="https://noviolenciaydiscriminacion.uc.cl/protocolos-y-lineamientos/" target="_blank" rel="noopener">protocolos oficiales de no violencia y no discriminación de la UC</a>.</p>
+    </div>
+  </div>
+</section>

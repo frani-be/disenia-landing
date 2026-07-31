@@ -1,0 +1,45 @@
+---
+import { biblioMinima, biblioRecomendada, type BibItem } from '../data/curso';
+---
+<section id="bibliografia">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">06 — Bibliografía</span>
+      <h2>Lecturas<br>del curso</h2>
+    </div>
+
+    <h3 style="font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); margin-bottom:24px;">Bibliografía mínima</h3>
+    <div class="bib-list">
+      {biblioMinima.map((b: BibItem) => (
+        <div class="bib-item">
+          <div class="bib-header">
+            <div class="bib-meta">
+              <span class="bib-autor">{b.autor} ({b.anio})</span>
+              <span class="bib-editorial">{b.editorial}</span>
+            </div>
+            <a class="bib-link" href={b.url} target="_blank" rel="noopener">Acceder &rarr;</a>
+          </div>
+          <div class="bib-title">{b.titulo}</div>
+          <div class="bib-resumen">{b.resumen}</div>
+        </div>
+      ))}
+    </div>
+
+    <h3 style="font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-dim); margin-top:48px; margin-bottom:24px;">Bibliografía complementaria</h3>
+    <div class="bib-list">
+      {biblioRecomendada.map((b: BibItem) => (
+        <div class="bib-item">
+          <div class="bib-header">
+            <div class="bib-meta">
+              <span class="bib-autor">{b.autor} ({b.anio})</span>
+              <span class="bib-editorial">{b.editorial}</span>
+            </div>
+            <a class="bib-link" href={b.url} target="_blank" rel="noopener">Acceder &rarr;</a>
+          </div>
+          <div class="bib-title">{b.titulo}</div>
+          <div class="bib-resumen">{b.resumen}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

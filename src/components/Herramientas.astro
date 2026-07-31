@@ -1,0 +1,27 @@
+---
+import { tools } from '../data/curso';
+---
+<section id="herramientas">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">04 — Herramientas</span>
+      <h2>Software y<br>plataformas</h2>
+    </div>
+    <p style="max-width:600px; font-size:14px; margin-bottom:40px; color:var(--text-dim);">Todas las herramientas del curso tienen tier gratuito. Ninguna requiere pago para los ejercicios y proyectos del semestre.</p>
+
+    <div class="tools-grid">
+      {tools.map((t) => (
+        <div class="tool-card">
+          <div class="tool-icon">
+            <img src={t.logo} alt={t.name} />
+          </div>
+          <div>
+            <div class="tool-name">{t.name}</div>
+            <div class="tool-category">{t.cat}</div>
+          </div>
+          <a class="tool-link" href={t.url} target="_blank" rel="noopener">{t.url.replace('https://', '')}</a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

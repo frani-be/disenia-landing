@@ -1,0 +1,73 @@
+---
+import { objetivos } from '../data/curso';
+---
+<section id="descripcion">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">01 — Descripción del curso</span>
+      <h2>¿De qué<br>trata?</h2>
+    </div>
+
+    <p class="desc-short">
+      Entrena al diseñador como <strong style="color:var(--white)">orquestador</strong> entre la ideación, el desarrollo y el resultado asistido por IA generativa. El foco es técnico: dominar pipelines con IA para exploraciones estéticas, comunicacionales e interactivas aplicadas a tareas reales del ejercicio profesional.
+    </p>
+
+    <div class="expandable">
+      <button class="expand-trigger" id="trigger-desc" aria-expanded="false" aria-controls="content-desc">
+        <span>Leer descripción completa</span>
+        <span class="arrow">↓</span>
+      </button>
+      <div class="expand-content" id="content-desc" role="region">
+        <p>El curso entrena al estudiante de diseño como <strong>orquestador</strong> entre la ideación, el desarrollo y el resultado asistido por inteligencia artificial generativa. El foco es fuertemente técnico: dominar la configuración de parámetros y arquitecturas de trabajo (pipelines) con IA para lograr exploraciones estéticas, comunicacionales e interactivas aplicadas a tareas reales del ejercicio profesional del diseñador.</p>
+        <p>El programa se organiza en <strong>dos grandes unidades prácticas</strong> separadas por una unidad reflexiva intermedia. La primera unidad cubre producción creativa: diseño visual, branding, imagen generativa, video, audio y automatización de flujos de trabajo. La segunda unidad es un momento de pausa crítica sobre la ética, la autoría y los futuros especulativos de la IA. La tercera unidad abarca el ciclo completo de UX/UI y desarrollo web no-code, desde la investigación de usuarios hasta el sitio publicado.</p>
+        <p>Cada clase de cuatro horas se divide en tres momentos fijos: <strong>reflexión crítica</strong> (presentación autónoma del estudiante sobre un tema investigado con IA), <strong>bloque teórico</strong> (contenido técnico y conceptual del docente) y <strong>trabajo práctico</strong> (ejercicio guiado sobre los contenidos de la sesión). Esta estructura entrena simultáneamente la ejecución técnica, el pensamiento crítico y la autonomía investigativa.</p>
+        <p>En la <strong>reflexión crítica</strong> cada estudiante investiga un tema asignado vinculado a tecnología, ética o diseño usando <strong>tres inteligencias artificiales de lenguaje (LLM)</strong> distintas. El objetivo no es repetir lo que generan los modelos, sino comparar sus respuestas, identificar sesgos, contradicciones y omisiones, y construir una posición propia fundamentada. Se presenta un resumen en clase que incorpore citas, casos concretos y una pregunta para discutir con el grupo.</p>
+        <p>El diseñador que completa este curso no usa la IA como botón de generación de imágenes. La usa como sistema que orquesta, configura y dirige hacia resultados creativos que de otro modo requerirían un equipo completo. El curso no reemplaza al diseñador: <strong>lo amplifica</strong>.</p>
+      </div>
+    </div>
+
+    <div class="section-header" style="margin-top:64px;">
+      <span class="label">Objetivos de aprendizaje</span>
+      <h2>¿Qué vas<br>a aprender?</h2>
+    </div>
+
+    <div class="accordion">
+      {objetivos.map((obj, i) => (
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" data-acc={`obj-${i}`}>
+            <span>{obj.nombre}</span>
+            <span class="arr">↓</span>
+          </button>
+          <div class="accordion-body" id={`obj-${i}`} role="region">
+            {obj.desc}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const trigger = document.getElementById('trigger-desc');
+  const content = document.getElementById('content-desc');
+  if (trigger && content) {
+    trigger.addEventListener('click', () => {
+      const isOpen = content.classList.toggle('open');
+      trigger.classList.toggle('open', isOpen);
+      trigger.setAttribute('aria-expanded', String(isOpen));
+      (trigger.querySelector('span:first-child') as HTMLElement).textContent =
+        isOpen ? 'Cerrar descripción' : 'Leer descripción completa';
+    });
+  }
+
+  document.querySelectorAll<HTMLButtonElement>('.accordion-trigger').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-acc')!;
+      const body = document.getElementById(targetId);
+      if (!body) return;
+      const isOpen = body.classList.toggle('open');
+      btn.classList.toggle('open', isOpen);
+      btn.setAttribute('aria-expanded', String(isOpen));
+    });
+  });
+</script>
