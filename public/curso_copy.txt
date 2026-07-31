@@ -33,7 +33,7 @@ export interface ConductaItem {
 }
 
 export const clases: Clase[] = [
-  { num: "01", fecha: "Martes 11 ago 2026", titulo: "El ecosistema de la IA generativa", unidad: 1 },
+  { num: "01", fecha: "Martes 11 ago 2026", titulo: "Introducción al curso: ecosistema de la IA generativa, acuerdos y cronograma", unidad: 0 },
   { num: "02", fecha: "Martes 18 ago 2026", titulo: "Prompt engineering: el lenguaje para hablar con máquinas", unidad: 1 },
   { num: "03", fecha: "Martes 25 ago 2026", titulo: "Generación de imagen: modelos, arquitecturas, consistencia y sistemas visuales", unidad: 1 },
   { num: "04", fecha: "Martes 01 sep 2026", titulo: "Branding con IA: identidad, naming y voz de marca", unidad: 1 },
