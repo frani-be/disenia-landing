@@ -3,6 +3,6 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.github.io',
-  base: '/landing/',
+  site: 'https://frani-be.github.io',
+  base: '/disenia-landing/',
 });
