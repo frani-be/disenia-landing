@@ -205,7 +205,7 @@ export const conductaItems: ConductaItem[] = [
   {
     num: "07",
     titulo: "Canales y tiempos de respuesta",
-    desc: "Las consultas por WhatsApp o mail se responden en horario hábil (lunes a jueves 10:00-18:00, viernes 10:00-14:00). Mensajes enviados fuera de ese horario se responderán el siguiente día hábil. Se espera el mismo respeto hacia los tiempos de la profesora que ella tiene hacia los de los estudiantes.",
+    desc: "Toda la comunicación del curso, consultas incluidas, se realiza a través de Canvas (cursos.canvas.uc.cl). El mail personal se usa solo para asuntos administrativos puntuales. Las consultas se responden en horario hábil (lunes a jueves 10:00-18:00, viernes 10:00-14:00). Mensajes enviados fuera de ese horario se responderán el siguiente día hábil. Se espera el mismo respeto hacia los tiempos de la profesora que ella tiene hacia los de los estudiantes.",
   },
   {
     num: "08",
