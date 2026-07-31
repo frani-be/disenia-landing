@@ -583,14 +583,12 @@ nav {
 .ldr-info > .btn-primary { grid-column: 2; justify-self: start; }
 
 .ldr-logo {
-  font-size: clamp(16px, 2.5vw, 22px);
-  font-weight: 700;
-  color: var(--white);
-  letter-spacing: -0.02em;
-  line-height: 1.2;
+  display: block;
+  width: auto;
+  height: 48px;
+  margin-top: 16px;
+  filter: brightness(0) saturate(100%) invert(37%) sepia(13%) saturate(750%) hue-rotate(182deg) brightness(92%) contrast(92%);
 }
-
-.ldr-logo span { color: var(--accent); }
 
 .ldr-desc {
   font-size: 13px;
