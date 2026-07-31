@@ -20,6 +20,11 @@ import { clases } from '../data/curso';
         <tbody>
           {clases.map((c) => (
             <>
+              {c.num === "01" && (
+                <tr class="unit-divider">
+                  <td colspan="3">Clase inicial · presentación del ramo, profesora y estudiantes</td>
+                </tr>
+              )}
               {c.num === "02" && (
                 <tr class="unit-divider">
                   <td colspan="3">Unidad 1 · Producción creativa — clases 02 a 07</td>
