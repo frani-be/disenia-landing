@@ -54,8 +54,7 @@ export const clases: Clase[] = [
   { num: "13", fecha: "Martes 10 nov 2026", titulo: "Desarrollo web no-code I: introducción a Webflow y Framer", unidad: 3 },
   { num: "14", fecha: "Martes 17 nov 2026", titulo: "Desarrollo web no-code II: interacción y animación", unidad: 3 },
   { num: "15", fecha: "Martes 24 nov 2026", titulo: "Integración de IA en interfaces: chatbots y asistentes", unidad: 3 },
-  { num: "16", fecha: "Martes 01 dic 2026", titulo: "Pipeline completo UX/UI/Web: del brief al producto publicado", unidad: 3 },
-  { num: "17", fecha: "Martes 08 dic 2026", titulo: "Presentación final: proyectos y cierre del curso", unidad: 3 },
+  { num: "16", fecha: "Martes 01 dic 2026", titulo: "Presentación final: proyectos y cierre del curso", unidad: 3 },
 ];
 
 export const objetivos: Objetivo[] = [
