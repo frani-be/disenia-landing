@@ -22,17 +22,22 @@ import { clases } from '../data/curso';
             <>
               {c.num === "01" && (
                 <tr class="unit-divider">
-                  <td colspan="3">Unidad 1 · Producción creativa — clases 01 a 08</td>
+                  <td colspan="3">Unidad 1 · Producción creativa — clases 01 a 07</td>
                 </tr>
               )}
-              {c.num === "09" && (
+              {c.num === "08" && (
                 <tr class="unit-divider">
-                  <td colspan="3">Unidad 2 · Intermedio reflexivo — clase 09</td>
+                  <td colspan="3">Unidad 2 · Intermedio reflexivo — clases 08 a 09</td>
                 </tr>
               )}
               {c.num === "10" && (
                 <tr class="unit-divider">
-                  <td colspan="3">Unidad 3 · Interfaces UX/UI/Web — clases 10 a 16</td>
+                  <td colspan="3">Unidad 3 · Interfaces UX/UI/Web — clases 10 a 15</td>
+                </tr>
+              )}
+              {c.num === "16" && (
+                <tr class="unit-divider">
+                  <td colspan="3">Presentación final — clase 16</td>
                 </tr>
               )}
               <tr>
@@ -48,9 +53,9 @@ import { clases } from '../data/curso';
 
     <div style="margin-top:32px; display:flex; flex-wrap:wrap; gap:16px; font-size:12px; color:var(--text-dim);">
       <span>Evaluaciones →</span>
-      <span><span style="color:var(--white)">Proyecto U1</span> · 35% · Clase 09</span>
+      <span><span style="color:var(--white)">Proyecto U1</span> · 35% · Clase 07 (29 sep)</span>
       <span><span style="color:var(--white)">Ensayo reflexivo</span> · 20% · 20 oct 23:59</span>
-      <span><span style="color:var(--white)">Proyecto U3</span> · 35% · Clase 16</span>
+      <span><span style="color:var(--white)">Proyecto U3</span> · 35% · Clase 16 (01 dic)</span>
       <span><span style="color:var(--white)">Participación</span> · 10% · Continua</span>
     </div>
 
