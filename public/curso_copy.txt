@@ -118,7 +118,7 @@ export const biblioMinima: BibItem[] = [
     titulo: "Cointeligencia: Vivir y trabajar con la IA",
     editorial: "Conecta",
     resumen: "Guía práctica de cómo colaborar con IA en el trabajo real, sin romantizarla ni tenerle miedo.",
-    url: "https://www.penguinlibros.com/es/humanidades/329459-libro-cointeligencia-9788413445717",
+    url: "https://www.casadellibro.com/libro-cointeligencia/9788418053214/16155367",
   },
   {
     autor: "Maeda, J.",
@@ -126,26 +126,26 @@ export const biblioMinima: BibItem[] = [
     titulo: "How to Speak Machine",
     editorial: "Portfolio",
     resumen: "Pensamiento computacional para no programadores. Indispensable para diseñadores que quieran entender código.",
-    url: "https://www.maedastudio.com/how-to-speak-machine",
+    url: "https://www.penguinrandomhouse.com/books/539046/how-to-speak-machine-by-john-maeda/",
   },
 ];
 
 export const biblioRecomendada: BibItem[] = [
   {
-    autor: "Goodman, E.",
-    anio: "2023",
-    titulo: "Designing with AI",
-    editorial: "O'Reilly Media",
-    resumen: "Manual técnico sobre cómo integrar IA en procesos reales de diseño UX, branding e interfaces.",
-    url: "https://www.oreilly.com/library/view/designing-with-ai/",
+    autor: "Nudelman, G.",
+    anio: "2024",
+    titulo: "UX for AI: A Framework for Designing AI-Driven Products",
+    editorial: "Wiley",
+    resumen: "Marco práctico para diseñar, investigar, probar y escalar productos centrados en el usuario que integran IA generativa.",
+    url: "https://www.wiley.com/en-us/UX+for+AI%3A+A+Framework+for+Designing+AI-Driven+Products-p-9781394345922",
   },
   {
-    autor: "Bento, R.",
-    anio: "2023",
-    titulo: "The Art of AI Prompt Engineering",
+    autor: "Hunter, N.",
+    anio: "2024",
+    titulo: "The Art of Prompt Engineering with ChatGPT: A Hands-On Guide",
     editorial: "Independently Published",
-    resumen: "Referencia técnica para construir prompts efectivos para texto e imagen en distintos modelos de IA.",
-    url: "https://www.amazon.com/dp/B0CNQJ4PTF",
+    resumen: "Referencia práctica para construir prompts efectivos con ChatGPT y sacar mejor provecho de los modelos de lenguaje.",
+    url: "https://www.barnesandnoble.com/w/the-art-of-prompt-engineering-with-chatgpt-nathan-hunter/1142962630",
   },
   {
     autor: "Scolari, C.",
@@ -153,7 +153,7 @@ export const biblioRecomendada: BibItem[] = [
     titulo: "Las leyes de la interfaz",
     editorial: "Gedisa",
     resumen: "Teoría de la evolución de las interfaces digitales. Base conceptual de la Unidad 3 del curso.",
-    url: "https://www.gedisa.com/articulo.aspx?idArt=9462",
+    url: "https://www.documenta-bcn.com/products/229958-las-leyes-de-la-interfaz.html",
   },
   {
     autor: "Manovich, L.",
@@ -161,7 +161,7 @@ export const biblioRecomendada: BibItem[] = [
     titulo: "El lenguaje de los nuevos medios de comunicación",
     editorial: "Paidós",
     resumen: "El libro fundacional del estudio de los nuevos medios. Esencial para entender el software como cultura.",
-    url: "https://archive.org/details/manovich-el-lenguaje-de-los-nuevos-medios",
+    url: "https://www.casadellibro.com/libro-el-lenguaje-de-los-nuevos-medios-de-comunicacion-la-imagen-en-la-era-digital/9788449317699/1046598",
   },
 ];
 
