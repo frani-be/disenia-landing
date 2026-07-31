@@ -1,6 +1,7 @@
 ---
 ---
 <section id="hero">
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
   <div class="container">
     <div class="hero-label">
       <span class="label">FADEU · PUC · 2026</span>
@@ -14,7 +15,7 @@
     <div class="hero-meta">
       <div class="hero-meta-item">
         <span class="label">Formato</span>
-        <strong>17 clases presenciales</strong>
+        <strong>16 clases presenciales</strong>
       </div>
       <div class="hero-meta-item">
         <span class="label">Horario</span>
@@ -39,3 +40,116 @@
     </div>
   </div>
 </section>
+
+<script>
+  (function () {
+    const canvas = document.getElementById('hero-canvas') as HTMLCanvasElement | null;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const root = getComputedStyle(document.documentElement);
+    const accent = root.getPropertyValue('--accent').trim() || '#62bff4';
+    const white = root.getPropertyValue('--white').trim() || '#f0f4ff';
+    const dim = root.getPropertyValue('--text-dim').trim() || '#5a677e';
+
+    let width = 0;
+    let height = 0;
+    let particles: { x: number; y: number; vx: number; vy: number; r: number }[] = [];
+    let animationId: number | null = null;
+
+    function resize() {
+      const section = canvas!.parentElement as HTMLElement;
+      width = section.offsetWidth;
+      height = section.offsetHeight;
+      const dpr = window.devicePixelRatio || 1;
+      canvas!.width = width * dpr;
+      canvas!.height = height * dpr;
+      canvas!.style.width = `${width}px`;
+      canvas!.style.height = `${height}px`;
+      ctx!.scale(dpr, dpr);
+
+      const area = width * height;
+      const count = Math.min(90, Math.max(30, Math.floor(area / 12000)));
+      particles = [];
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.4,
+          vy: (Math.random() - 0.5) * 0.4,
+          r: Math.random() * 1.5 + 1,
+        });
+      }
+    }
+
+    function draw() {
+      if (!ctx || !canvas) return;
+      ctx.clearRect(0, 0, width, height);
+
+      for (let i = 0; i < particles.length; i++) {
+        const a = particles[i];
+        a.x += a.vx;
+        a.y += a.vy;
+        if (a.x < 0) a.x = width;
+        if (a.x > width) a.x = 0;
+        if (a.y < 0) a.y = height;
+        if (a.y > height) a.y = 0;
+      }
+
+      const connectionDist = Math.min(140, width * 0.18);
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const a = particles[i];
+          const b = particles[j];
+          const dx = a.x - b.x;
+          const dy = a.y - b.y;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          if (d < connectionDist) {
+            const alpha = (1 - d / connectionDist) * 0.35;
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(98, 191, 244, ${alpha})`;
+            ctx.lineWidth = 0.8;
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      for (const p of particles) {
+        ctx.beginPath();
+        ctx.fillStyle = `rgba(240, 244, 255, ${p.r > 2 ? 0.7 : 0.45})`;
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      animationId = requestAnimationFrame(draw);
+    }
+
+    function start() {
+      resize();
+      draw();
+    }
+
+    function stop() {
+      if (animationId) cancelAnimationFrame(animationId);
+      animationId = null;
+    }
+
+    window.addEventListener('resize', resize);
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (prefersReducedMotion.matches) {
+      resize();
+      draw();
+      stop();
+    } else {
+      start();
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stop(); else start();
+    });
+  })();
+</script>
